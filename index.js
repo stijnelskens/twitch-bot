@@ -1,6 +1,5 @@
 const ComfyJS = require('comfy.js');
 
-
 // All commands here!
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command === 'test') {
@@ -15,7 +14,11 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 }
 
 ComfyJS.onRaid = (user, viewers, extra ) => {
-    ComfyJS.Say(`Thanks for the raid. ${user}`);
+    ComfyJS.Say(`Thanks for the raid. ${user} with ${viewers} viewers.`);
+}
+
+ComfyJS.onJoin = (user) => {
+    ComfyJS.Say(`Welcome to the stream. ${user}`);
 }
 
 ComfyJS.Init(process.env.TWITCHUSER, process.env.OAUTH);

@@ -791,7 +791,11 @@ ComfyJS.onCommand = function (user, command, message, flags, extra) {
 };
 
 ComfyJS.onRaid = function (user, viewers, extra) {
-  ComfyJS.Say("Thanks for the raid. ".concat(user));
+  ComfyJS.Say("Thanks for the raid. ".concat(user, " with ").concat(viewers, " viewers."));
+};
+
+ComfyJS.onJoin = function (user) {
+  ComfyJS.Say("Welcome to the stream. ".concat(user));
 };
 
 ComfyJS.Init("laks_1", "oauth:z3t7lrxhv8haksx4o801l2cn5szm8e");
@@ -823,7 +827,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51446" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49383" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
